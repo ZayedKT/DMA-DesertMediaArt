@@ -45,13 +45,13 @@ while (speed > 0):
     led[0] = (5, 5, 5)
     led[0] = (0, 0, 0)
     time.sleep(speed)
-    speed -= 0.005
+    speed -= 0.01
 
 
 ctr = 0
 #Second LED Stage 'The invention of Black and White TVs'
-#Will make the RGB alternate between white and turning off, but this time there will be no blinking but instead it will alternate between both options 10 times
-while (ctr < 10):
+#Will make the RGB alternate between white and turning off, but this time there will be no blinking but instead it will alternate between both options 5 times
+while (ctr < 5):
     led.brightness = 0.2
     led[0] = (80, 70, 70)
     time.sleep(0.25)
@@ -63,29 +63,26 @@ while (ctr < 10):
 ctr = 0
 #Third LED Stage 'The introduction of colors to TVs'
 #Will make the RGB go through 3 different phases/patterns. This stage is also when new colors aside from white will be displayed.
-#It will start by alternating between a Red Color and Off ten times. Then, it will alternate between Red and Green ten times, and finally between Red, Green, and Blue (or RGB) 15 times.
-while (ctr < 36):
-    #Will start with blinking the Red Color 10 times
-    if (ctr < 10):
-        led.brightness = 0.2
+#It will start by alternating between a Red Color and Off five times. Then, it will alternate between Red and Green five times, and finally between Red, Green, and Blue (or RGB) five times.
+while (ctr < 15):
+    #Will start with blinking the Red Color 5 times
+    if (ctr < 5):
         led[0] = (255, 0, 0)
         time.sleep(0.25)
         led[0] = (0, 0, 0)
         time.sleep(0.5)
         ctr += 1
 
-    #Will alternate between Red and Green Colors 10 times
-    elif (ctr < 20):
-        led.brightness = 0.2
+    #Will alternate between Red and Green Colors 5 times
+    elif (ctr < 10):
         led[0] = (255, 0, 0)
         time.sleep(0.25)
         led[0] = (0, 255, 0)
         time.sleep(0.5)
         ctr += 1
 
-    #Will alternate between Red, Green, and Blue Colors, 15 times
+    #Will alternate between Red, Green, and Blue Colors, 5 times
     else:
-        led.brightness = 0.2
         led[0] = (255, 0, 0)
         time.sleep(0.25)
         led[0] = (0, 255, 0)
@@ -95,9 +92,12 @@ while (ctr < 36):
         ctr += 1
 
 #Fourth LED Stage 'The Current TV Stage where TVs can display over a Billion Colors'
-#Will Cycle Through an RGB Rainbow Forever or until the chip is turned off
+#Will Cycle Through an RGB Rainbow.
 i = 0 #Start at the Beginning of the Rainbow
-while True:
+ctr = 0
+while ctr < 2000:
     i = (i+1) % 256
     led.fill(colorwheel(i))
     time.sleep(0.0001)
+    ctr += 1
+ 
