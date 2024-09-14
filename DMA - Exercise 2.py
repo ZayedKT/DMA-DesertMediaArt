@@ -14,7 +14,7 @@
 ============================================================================
 '''
 
-"""CircuitPython Essentials Internal RGB LED red, green, blue example"""
+#importing Libraries
 import time
 import board
 from rainbowio import colorwheel
