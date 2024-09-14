@@ -50,7 +50,7 @@ while (speed > 0):
 
 ctr = 0
 #Second LED Stage 'The invention of Black and White TVs'
-#Will make the RGB alternate between white and turning off, but this time there will be no blinking but instead it will alternate between both options 5 times
+#Will make the RGB alternate between white and turning off, but this time there will be no blinking instead it will alternate between both options 5 times
 while (ctr < 5):
     led.brightness = 0.2
     led[0] = (80, 70, 70)
@@ -92,7 +92,7 @@ while (ctr < 15):
         ctr += 1
 
 #Fourth LED Stage 'The Current TV Stage where TVs can display over a Billion Colors'
-#Will Cycle Through an RGB Rainbow.
+#Will Cycle Through an RGB Rainbow for a short period until the counter 'ctr' has reached the threshold value of 2000.
 i = 0 #Start at the Beginning of the Rainbow
 ctr = 0
 while ctr < 2000:
